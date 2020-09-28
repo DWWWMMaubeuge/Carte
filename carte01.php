@@ -34,14 +34,14 @@ class Jeu
 	public $cartes = array();
 
 
-	public function __construct(  )
+	public function __construct()
 	{
 		GLOBAL $cards_couleur, $cards_valeur;
 		
 		foreach( $cards_couleur as $couleur ) 
 			foreach ($cards_valeur as $valeur) 
 			{
-				Carte( $couleur, $valeur );
+				array_push($this->cartes,new Carte( $couleur, $valeur ));
 			}
 	}
 
