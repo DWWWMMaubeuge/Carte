@@ -45,7 +45,7 @@ class Carte
 	{
 		$img = Card2Img( $this->couleur, $this->valeur );
 		//echo "$img <br>";
-		return "<img src=\"$img\" width=\"150\" height=\"250\">\n"; 
+		return "<img src=\"$img\" width=\"75\" height=\"125\">\n"; 
 	}
 }
 
@@ -65,17 +65,29 @@ class Jeu
 
 		foreach( $cards_couleur as $couleur ) 
 			foreach ($cards_valeur as $valeur) 
-			{
 				array_push( $this->cartes, new Carte( $couleur, $valeur ));
-			}
 	}
 
 	public function show()
 	{
-		foreach ($this->cartes as $carte ) 
-		{
+		$break = 14;
+		$cpt = 1;
+		foreach ($this->cartes as $carte )
+		{ 
 			echo $carte->show();
+			if ( $cpt++ % $break == 0)
+				echo "<br>\n";
 		}
+	}
+
+	public function trier()
+	{
+		asort( $this->cartes );
+	}
+
+	public function melanger()
+	{
+		shuffle( $this->cartes );
 	}
 
 
@@ -83,6 +95,13 @@ class Jeu
 }
 
 $j1 = new Jeu();
+$j1->show();
+$j1->trier();
+echo "===============================<br>";
+$j1->show();
+
+$j1->melanger();
+echo "===============================<br>";
 $j1->show();
 
 
