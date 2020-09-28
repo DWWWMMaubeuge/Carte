@@ -116,7 +116,7 @@ class Jeu
 	public function trier()
 	{
 		asort( $this->cartes );
-	}
+	}	
 
 	public function melanger()
 	{
@@ -129,13 +129,14 @@ class Jeu
 
 $j1 = new Jeu();
 $j1->show();
+
 $j1->trier();
 echo "===============================<br>";
 $j1->show();
 
-$j1->melanger();
+//$j1->melanger();
 echo "===============================<br>";
-$j1->show();
+//$j1->show();
 
 
 
