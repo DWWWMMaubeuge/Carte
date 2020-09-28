@@ -33,35 +33,28 @@ class Carte
 {
 	public $couleur;
 	public $valeur;
-	public $image;
 
-	public function __construct(  $col, $val, $img )
+
+	public function __construct(  $col, $val)
 	{
 		$this->couleur = $col;
 		$this->valeur  = $val;
-		$this->image  = $img;
-	} 
-
+	
+	}
 	public function show( )
-<<<<<<< HEAD
-	{	
-		echo "<p>".$this->valeur." de ".$this->couleur."</p>\n";	
-		//echo "<img src=>'" .$this->image."'  width='150' height='150' >" ;
-=======
 	{
 		$img = Card2Img( $this->couleur, $this->valeur );
 		//echo "$img <br>";
 		return "<img src=\"$img\" width=\"75\" height=\"125\">\n"; 
 	}
->>>>>>> origin
 }
 
-	}
+	
 
 	
 
 
-$c1 = new Carte( "Pique", "As","<img src= Photos-01.jpg>");
+$c1 = new Carte( "Pique", "As",);
 
 
 //$c1 = new Carte( "pique", "roi");
