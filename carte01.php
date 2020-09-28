@@ -53,14 +53,24 @@ function Card2Img( $couleur, $valeur )
 class Carte
 {
 	public $couleur;
+	public $lettre_fantome;
 	public $valeur;
 
+<<<<<<< HEAD
 
 	public function __construct(  $col, $val)
 	{
 		$this->couleur = $col;
 		$this->valeur  = $val;
 	
+=======
+	public function __construct(  $col, $val, $lettre )
+	{
+		//echo "__construct(  $col, $val, $lettre )<br>\n";
+		$this->couleur = $col;
+		$this->valeur = $val;
+		$this->lettre_fantome = $lettre;
+>>>>>>> origin
 	}
 	public function show( )
 	{
@@ -85,16 +95,28 @@ $c1 = new Carte( "Pique", "As",);
 
 class Jeu
 {
-	public $cartes = array();
+	public $cartes;
 
-	public function __construct(  )
+	public function __construct( )
+	{
+		$this->cartes = array();
+	}
+
+	public function initTarot(  )
 	{
 		GLOBAL $cards_couleur, $cards_valeur;
 
 		foreach( $cards_couleur as $couleur ) 
-			foreach ($cards_valeur as $valeur) 
-				array_push( $this->cartes, new Carte( $couleur, $valeur ));
+		{
+			$code = 65;
+			foreach ($cards_valeur as $valeur)
+			{ 
+				array_push( $this->cartes, new Carte( $couleur, $valeur, chr($code) ));
+				$code++; 
+			}
+		}
 	}
+
 
 	public function show()
 	{
@@ -123,11 +145,38 @@ class Jeu
 		shuffle( $this->cartes );
 	}
 
+	public function donnerUneCarte()
+	{
+
+		$carte  = array_pop($this->cartes);
+		return  $carte;
+	}
+
+	public function prendreUneCarte( $carte )
+	{
+		array_push( $this->cartes, $carte );
+	}
 
 
+
+	public function distribuer( $nbrCarteADistribuer )
+	{
+		$newJeu = new Jeu();
+
+		while( $nbrCarteADistribuer-- )
+		{
+			$carte = $this->donnerUneCarte();
+			$newJeu->prendreUneCarte(   $carte   );	
+		}
+		// on retourne un jeu qui contient $nbrCarteADistribuer
+		return $newJeu;
+	}
 }
 
+
 $j1 = new Jeu();
+$j1->initTarot();
+
 $j1->show();
 
 $j1->trier();
@@ -138,7 +187,21 @@ $j1->show();
 echo "===============================<br>";
 //$j1->show();
 
+$nj1 = $j1->distribuer( 10 );
+$nj2 = $j1->distribuer( 10 );
+$nj3 = $j1->distribuer( 10 );
+$nj4 = $j1->distribuer( 10 );
 
+
+echo "===============================<br>";
+
+$nj1->show();
+$nj2->show();
+$nj3->show();
+$nj4->show();
+
+echo "===============================<br>";
+$j1->show();
 
 
 ?>
