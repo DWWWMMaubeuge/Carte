@@ -11,7 +11,8 @@ class Carte
 
 	public function __construct(  $col, $val )
 	{
-
+		$this->couleur = $col;
+		$this->valeur = $val;
 	}
 
 	public function show( )
