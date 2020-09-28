@@ -17,7 +17,7 @@ class Carte
 
 	public function show( )
 	{
-
+		
 	}
 }
 
@@ -25,6 +25,7 @@ class Carte
 $c1 = new Carte( "Pique", "As");
 
 $c1->show();
+$j1->show();
 // As de Pique
 
 
@@ -40,12 +41,19 @@ class Jeu
 		foreach( $cards_couleur as $couleur ) 
 			foreach ($cards_valeur as $valeur) 
 			{
-				Carte( $couleur, $valeur );
+				array_push($cartes, Carte( $couleur, $valeur ));
 			}
 	}
 
 
+	public function show()
+	{
+		foreach ($this->carte as $carte)
+		{
+			echo $carte->show()
+		}
 
+	}
 }
 
 
