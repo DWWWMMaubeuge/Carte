@@ -41,7 +41,7 @@ class Jeu
 		foreach( $cards_couleur as $couleur ) 
 			foreach ($cards_valeur as $valeur) 
 			{
-				Carte( $couleur, $valeur );
+				array_push ($this->cartes, new Carte( $couleur, $valeur ));
 			}
 	}
 
