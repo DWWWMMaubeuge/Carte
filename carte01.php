@@ -80,14 +80,6 @@ class Jeu
 		}
 	}
 
-<<<<<<< HEAD
-	public function show()
-	{
-		foreach ($this->carte as $carte)
-		{
-			echo $carte->show();
-		}
-=======
 	public function trier()
 	{
 		asort( $this->cartes );
@@ -98,7 +90,6 @@ class Jeu
 		shuffle( $this->cartes );
 	}
 
->>>>>>> master
 
 
 }
