@@ -7,19 +7,21 @@ class Carte
 
 	public function __construct(  $col, $val )
 	{
-
-	} __
+	$this->couleur = $col;
+	$this->valeur = $val;
+	} 
 
 	public function show( )
 	{
+		echo $this->couleur." "."de"." ".$this->valeur."<br>\n";
 
-	} __
+	} 
 }
 
 
-$c1 = new Carte( "Pique", "As");
+$c1 = new Carte( "As", "pique");
 
-$c1.show();
+$c1->show();
 // As de Pique
 
 
