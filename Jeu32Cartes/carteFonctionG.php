@@ -3,6 +3,9 @@
 $cards_valeur = array( 'as', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'valet', 'cavalier', 'dame', 'roi' );
 $cards_couleur = array( 'carreau' , 'pique', 'coeur', 'trefle' );
 
+$cards_valeur32 = array( 'as', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'dame', 'roi' );
+
+
 
 function Card2Num( $couleur, $valeur )
 {

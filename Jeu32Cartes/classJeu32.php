@@ -11,12 +11,12 @@ class Jeu
 
 	public function init32()
 	{
-		GLOBAL $cards_couleur, $cards_valeur;
+		GLOBAL $cards_couleur, $cards_valeur32;
 
 		foreach( $cards_couleur as $couleur ) 
 		{
-			$code = 32;
-			foreach ($cards_valeur as $valeur)
+			$code = 65;
+			foreach ($cards_valeur32 as $valeur)
 			{ 
 				array_push( $this->cartes, new Carte( $couleur, $valeur, chr($code) ));
 				$code++; 

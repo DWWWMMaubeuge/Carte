@@ -94,7 +94,7 @@ class Jeu
 	{
 		$newJeu = new Jeu();
 
-		while( $nbrCarteADistribuer )
+		while( $nbrCarteADistribuer -- )
 		{
 			$carte = $this->donnerUneCarte();
 			$newJeu->prendreUneCarte(   $carte   );	
