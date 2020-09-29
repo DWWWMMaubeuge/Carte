@@ -22,7 +22,7 @@ $jeu1->show();
 
 $nouveauJeu1 = $jeu1->distribuer( 10 );
 $nouveauJeu2 = $jeu1->distribuer( 10 );
-$nouveauJeu3 = $jeu1->distribuer( 20 );
+$nouveauJeu3 = $jeu1->distribuer( 12 );
 
 
 echo "============ 3 jeux de  10 ===================<br>";
