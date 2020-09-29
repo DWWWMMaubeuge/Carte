@@ -43,12 +43,7 @@ echo "========= les deux enfants qui se sont partagé le jeux 4 =========<br>";
 $joueurEnfant1->show();
 $joueurEnfant2->show();
 
-<<<<<<< HEAD
-
-echo "big ass ===============================<br>";
-=======
 echo "========= Rest de carte dans le jeux 4 =========<br>";
->>>>>>> master
 $nouveauJeu4->show();
 
 
