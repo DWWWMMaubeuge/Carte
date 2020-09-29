@@ -18,14 +18,31 @@ $jeu1->show();
 //$jeu1->show();
 
 echo "=== distrib 40  ===<br>";
-$nouveauJeu1 = $jeu1->distribuer( 40 );
 
+$cpt = 10;
+while (  $cpt-- )
+{
+	try 
+	{
+		$nouveauJeu1 = $jeu1->distribuer( 7 );
+		$nouveauJeu1->showNL( 1 );
+		//echo "je viens de donner 10 cartes<br>";
+	}
+	catch( Exception $e )
+	{
+		//echo "une Exception a été lancée<br>";
+		//echo "nombre de cartes insufisante<br>";
+		//echo "je remet des carte dans le jeux<br>";
+		$jeu1->init32();
+	}
+}
+/*
 echo "============ Le nouveau jeu  ===================<br>";
 
 $nouveauJeu1->showNL(4);
 
 echo "========= Rest de carte dans le jeux =========<br>";
 $jeu1->show();
-
+*/
 
 ?>
