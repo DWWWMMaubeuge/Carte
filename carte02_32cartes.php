@@ -12,28 +12,29 @@ setHeaderNoCache();
 $jeu1 = new Jeu();
 $jeu1->init32();
 
-$jeu1->show();
+//echo "=== show en 4 lignes de 8  ===<br>";
+echo "=== show en 8 lignes de 4  ===<br>";
+$jeu1->showNL(8);
+//$jeu1->show();
 $jeu1->trier();
-echo "===============================<br>";
+echo "=== show en 4 lignes de 8  ===<br>";
 $jeu1->show();
 
 $jeu1->melanger();
-echo "===============================<br>";
+echo "=== show en 4 lignes de 8  ===<br>";
 $jeu1->show();
 
 
 $nouveauJeu1 = $jeu1->distribuer( 10 );
 $nouveauJeu2 = $jeu1->distribuer( 10 );
 $nouveauJeu3 = $jeu1->distribuer( 10 );
-$nouveauJeu4 = $jeu1->distribuer( 10 );
 
 
-echo "===============================<br>";
+echo "============ 3 jeux de  10 ===================<br>";
 
 $nouveauJeu1->show();
 $nouveauJeu2->show();
 $nouveauJeu3->show();
-$nouveauJeu4->show();
 
 echo "===============================<br>";
 $jeu1->show();
