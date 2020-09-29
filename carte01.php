@@ -1,7 +1,7 @@
 <?php
 
-$cards_valeur = array( 'as', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'valet', 'cavalier', 'dame', 'roi' );
-$cards_couleur = array( 'carreau' , 'pique', 'coeur', 'trefle' );
+$card_val = array( 'As', 'Deux', 'Trois', 'Quatre', 'Cinq', 'Six', 'Sept', 'Huit', 'Neuf', 'Dix', 'Valet', 'Valet', 'Reine', 'Roi' );
+$card_col = array( 'Carreau' , 'Pique', 'Qoeur', 'Trefle' );
 
 class Carte
 {
@@ -10,9 +10,6 @@ class Carte
 
 	public function __construct(  $col, $val )
 	{
-		$this->couleur = $col;
-		$this->valeur = $val;
-
         $card_col = array(
             'H' => 'Coeur',
             'S' => 'Pique',
@@ -34,8 +31,8 @@ class Carte
             'Q' => 'Reine',
             'K' => 'Roi'
         );
-        $this->col = $col;
-        $this->val = $val;
+		$this->couleur = $col;
+		$this->valeur = $val;
         $this->col_text = $card_col[$col];
         $this->val_text = $card_val[$val];
     }
