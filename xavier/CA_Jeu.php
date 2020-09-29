@@ -1,6 +1,6 @@
-<?php
+git <?php
 
-$__TEST = true;
+//$__TEST = true;
 
 include_once( "CA_fonctions_generales.php");
 include_once( "CA_Carte.php");
@@ -10,15 +10,18 @@ class Jeu
 {
 	// array carte contient le jeu de carte
 	public $cartes;
+	public $break;
 
 	public function __construct( )
 	{
 		$this->cartes = array();
+		$this->break = 1;
 	}
 
 	public function initTarot(  )
 	{
 		GLOBAL $cards_couleur, $cards_valeur;
+		$this->break = 14;
 
 		foreach( $cards_couleur as $couleur ) 
 		{
@@ -33,12 +36,13 @@ class Jeu
 
 	public function init32(  )
 	{
-		GLOBAL $cards_couleur, $cards_valeur;
+		GLOBAL $cards_couleur, $cards_valeur32;
+		$this->break = 8;
 
 		foreach( $cards_couleur as $couleur ) 
 		{
 			$code = 65;
-			foreach ($cards_valeur as $valeur)
+			foreach ($cards_valeur32 as $valeur)
 			{ 
 				array_push( $this->cartes, new Carte( $couleur, $valeur, chr($code) ));
 				$code++; 
@@ -49,13 +53,12 @@ class Jeu
 
 	public function show()
 	{
-		$break = 14;
 		$cpt = 1;
 		echo "<div class=\"container_cartes\">\n";
 		foreach ($this->cartes as $carte )
 		{ 
 			echo $carte->show();
-			if ( $cpt++ % $break == 0)
+			if ( $cpt++ % $this->break == 0)
 			{
 				echo "</div>\n";
 				echo "<div class=\"container_cartes\">\n";
@@ -64,7 +67,23 @@ class Jeu
 		echo "</div>\n";
 	}
 
+	public function showNL( $nl )
+	{
+		$cpt = 1;
+		$this->break = count( $this->cartes ) / $nl;
 
+		echo "<div class=\"container_cartes\">\n";
+		foreach ($this->cartes as $carte )
+		{ 
+			echo $carte->show();
+			if ( $cpt++ % $this->break == 0)
+			{
+				echo "</div>\n";
+				echo "<div class=\"container_cartes\">\n";
+			}
+		}
+		echo "</div>\n";
+	}
 
 	public function trier()
 	{
@@ -78,7 +97,6 @@ class Jeu
 
 	public function donnerUneCarte()
 	{
-
 		$carte  = array_pop($this->cartes);
 		return  $carte;
 	}
@@ -94,7 +112,7 @@ class Jeu
 	{
 		$newJeu = new Jeu();
 
-		while( $nbrCarteADistribuer -- )
+		while( $nbrCarteADistribuer-- )
 		{
 			$carte = $this->donnerUneCarte();
 			$newJeu->prendreUneCarte(   $carte   );	
@@ -162,8 +180,5 @@ if ( $__TEST )
 	echo "===============================<br>";
 	$nouveauJeu4->show();
 	// affiche rien car le jeu est vide
-
-
 }
-
 ?>
