@@ -10,7 +10,7 @@ include_once( "CA_Jeu.php");
 setHeaderNoCache();
 
 $jeu1 = new Jeu();
-$jeu1->initTarot();
+$jeu1->init32();
 
 $jeu1->show();
 $jeu1->trier();
