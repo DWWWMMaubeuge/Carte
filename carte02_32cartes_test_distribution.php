@@ -18,10 +18,6 @@ $jeu1->show();
 //$jeu1->show();
 
 echo "=== distrib 40  ===<br>";
-<<<<<<< HEAD
-$nouveauJeu1 = $jeu1->distribuer( 24 );
-=======
->>>>>>> master
 
 $cpt = 10;
 while (  $cpt-- )
