@@ -79,40 +79,18 @@ $cards_array =
 'KP' //77
 ];
 
-<<<<<<< HEAD
-$cards_valeur = array( 'as', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'valet', 'cavalier', 'dame', 'roi' );
-$cards_couleur = array( 'carreau' , 'pique', 'coeur', 'trefle' );
-
-
-
-function Code2Num( $code )
-{
-	GLOBAL $cards_array;
-	return array_search( $code, $cards_array );
-}
-
-=======
 $cards_valeur = array( 'as'=>0, 'deux'=>1, 'trois'=>2, 'quatre'=>3, 'cinq'=>4, 'six'=>5, 'sept'=>6, 'huit'=>7, 'neuf'=>8, 'dix'=>9, 'valet'=>10, 'cavalier'=>11, 'dame'=>12, 'roi'=>13 );
 $cards_couleur = array( 'carreau'=>0 , 'pique'=>1, 'coeur'=>2, 'trefle'=>3 );
 
 
 
->>>>>>> master
 function Card2Num( $couleur, $valeur )
 {
 	echo "Card2Num( $couleur, $valeur )<br>";
 	GLOBAL $cards_couleur, $cards_valeur;
-<<<<<<< HEAD
-	if ( $valeur == 0 )
-		$valeur = 'as';
-
-	$ic = array_search( $couleur, $cards_couleur );
-	$iv = array_search( $valeur , $cards_valeur );
-=======
 
 	$ic = $cards_couleur[ $couleur ];
 	$iv = $cards_valeur[ $valeur ];
->>>>>>> master
 	echo " $ic, $iv<br>";
 	return 22 + ($ic*14) + $iv; 
 }
@@ -126,11 +104,7 @@ function Card2Img( $couleur, $valeur )
 
 echo Card2Img( 'carreau', 'as' )."<br>"; 
 echo Card2Img( 'trefle', 'roi' )."<br>"; 
-<<<<<<< HEAD
-echo Card2Img( 'trefle', 'deux' )."<br>"; 
-=======
 echo Card2Img( 'trefle', 'as' )."<br>"; 
->>>>>>> master
 echo Card2Img( 'trefle', 'dix' )."<br>"; 
 echo Card2Img( 'trefle', 'dame' )."<br>"; 
 
