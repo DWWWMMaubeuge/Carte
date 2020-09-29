@@ -56,21 +56,12 @@ class Carte
 	public $lettre_fantome;
 	public $valeur;
 
-<<<<<<< HEAD
-
-	public function __construct(  $col, $val)
-	{
-		$this->couleur = $col;
-		$this->valeur  = $val;
-	
-=======
 	public function __construct(  $col, $val, $lettre )
 	{
 		//echo "__construct(  $col, $val, $lettre )<br>\n";
 		$this->couleur = $col;
 		$this->valeur = $val;
 		$this->lettre_fantome = $lettre;
->>>>>>> origin
 	}
 	public function show( )
 	{
@@ -85,7 +76,7 @@ class Carte
 	
 
 
-$c1 = new Carte( "Pique", "As",);
+//$c1 = new Carte( "Pique", "As",);
 
 
 //$c1 = new Carte( "pique", "roi");
