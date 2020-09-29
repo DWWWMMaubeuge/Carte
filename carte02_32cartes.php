@@ -21,6 +21,7 @@ $jeu1->melanger();
 echo "===============================<br>";
 $jeu1->show();
 
+
 $nouveauJeu1 = $jeu1->distribuer( 10 );
 $nouveauJeu2 = $jeu1->distribuer( 10 );
 $nouveauJeu3 = $jeu1->distribuer( 10 );
@@ -43,7 +44,8 @@ $joueurEnfant2 = $nouveauJeu4->distribuer(5);
 $joueurEnfant1->show();
 $joueurEnfant2->show();
 
-echo "===============================<br>";
+
+echo "big ass ===============================<br>";
 $nouveauJeu4->show();
 
 

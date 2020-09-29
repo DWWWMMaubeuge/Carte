@@ -90,11 +90,11 @@ class Jeu
 
 
 
-	public function distribuer( $nbrCarteADistribuer )
+	public function distribuer( $nbrCarteADistribuer)
 	{
 		$newJeu = new Jeu();
 
-		while( $nbrCarteADistribuer )
+		while( $nbrCarteADistribuer-- )
 		{
 			$carte = $this->donnerUneCarte();
 			$newJeu->prendreUneCarte(   $carte   );	

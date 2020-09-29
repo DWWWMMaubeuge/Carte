@@ -29,7 +29,7 @@ class Carte
 
 
 
-if ( $__TEST )
+//if ( $__TEST )
 {
 
 echo "section des tests de CA_Carte.php <br>";
