@@ -1,6 +1,6 @@
 <?php
 
-$__TEST = true;
+//$__TEST = true;
 
 include_once( "CA_fonctions_generales.php");
 include_once( "CA_Carte.php");
@@ -10,35 +10,36 @@ class Jeu
 {
 	// array carte contient le jeu de carte
 	public $cartes;
+	public $break;
 
 	public function __construct( )
 	{
 		$this->cartes = array();
+		$this->break = 1;
 	}
 
 	public function initTarot(  )
 	{
-		GLOBAL $cards_couleur, $cards_valeur;
-
-		foreach( $cards_couleur as $couleur ) 
-		{
-			$code = 65;
-			foreach ($cards_valeur as $valeur)
-			{ 
-				array_push( $this->cartes, new Carte( $couleur, $valeur, chr($code) ));
-				$code++; 
-			}
-		}
+		GLOBAL $cards_valeur;
+		$this->init( $cards_valeur, 14 );
 	}
 
 	public function init32(  )
 	{
-		GLOBAL $cards_couleur, $cards_valeur;
+		GLOBAL $cards_valeur32;
+		$this->init( $cards_valeur32, 8 );
+	}
+
+
+	private function init( $array_carte, $longuer_ligne )
+	{
+		GLOBAL $cards_couleur;
+		$this->break = $longuer_ligne;
 
 		foreach( $cards_couleur as $couleur ) 
 		{
 			$code = 65;
-			foreach ($cards_valeur as $valeur)
+			foreach ($array_carte as $valeur)
 			{ 
 				array_push( $this->cartes, new Carte( $couleur, $valeur, chr($code) ));
 				$code++; 
@@ -49,13 +50,23 @@ class Jeu
 
 	public function show()
 	{
-		$break = 14;
+			$this->_show( $this->break );
+	}
+
+	public function showNL( $nl )
+	{
+		$breakL = count( $this->cartes ) / $nl;
+		$this->_show( $breakL );
+	}
+
+	private function _show( $breakL )
+	{
 		$cpt = 1;
 		echo "<div class=\"container_cartes\">\n";
 		foreach ($this->cartes as $carte )
 		{ 
 			echo $carte->show();
-			if ( $cpt++ % $break == 0)
+			if ( $cpt++ % $breakL == 0)
 			{
 				echo "</div>\n";
 				echo "<div class=\"container_cartes\">\n";
@@ -63,8 +74,6 @@ class Jeu
 		}
 		echo "</div>\n";
 	}
-
-
 
 	public function trier()
 	{
@@ -78,7 +87,6 @@ class Jeu
 
 	public function donnerUneCarte()
 	{
-
 		$carte  = array_pop($this->cartes);
 		return  $carte;
 	}
@@ -94,7 +102,7 @@ class Jeu
 	{
 		$newJeu = new Jeu();
 
-		while( $nbrCarteADistribuer )
+		while( $nbrCarteADistribuer-- )
 		{
 			$carte = $this->donnerUneCarte();
 			$newJeu->prendreUneCarte(   $carte   );	
@@ -162,8 +170,5 @@ if ( $__TEST )
 	echo "===============================<br>";
 	$nouveauJeu4->show();
 	// affiche rien car le jeu est vide
-
-
 }
-
 ?>

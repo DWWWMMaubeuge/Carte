@@ -2,6 +2,8 @@
 
 $cards_valeur = array( 'as', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', 'dix', 'valet', 'cavalier', 'dame', 'roi' );
 
+$cards_valeur32 = array( 'as', 'sept', 'huit', 'neuf', 'dix', 'valet', 'dame', 'roi' );
+
 $cards_couleur = array( 'carreau' , 'pique', 'coeur', 'trefle' );
 
 
