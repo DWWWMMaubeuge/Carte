@@ -82,6 +82,27 @@ class Jeu
 		echo "</div>\n";
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public function trier()
 	{
 		asort( $this->cartes );
@@ -124,7 +145,7 @@ class Jeu
 
 
 
-if ( $__TEST )
+//if ( $__TEST )
 {
 	setHeaderNoCache();
 
