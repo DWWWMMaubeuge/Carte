@@ -70,13 +70,13 @@ class Jeu
 	public function showNL( $nl )
 	{
 		$cpt = 1;
-		$this->break = count( $this->cartes ) / $nl;
+		$breakL = count( $this->cartes ) / $nl;
 
 		echo "<div class=\"container_cartes\">\n";
 		foreach ($this->cartes as $carte )
 		{ 
 			echo $carte->show();
-			if ( $cpt++ % $this->break == 0)
+			if ( $cpt++ % $this->breakL == 0)
 			{
 				echo "</div>\n";
 				echo "<div class=\"container_cartes\">\n";
