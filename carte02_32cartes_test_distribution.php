@@ -18,7 +18,7 @@ $jeu1->show();
 //$jeu1->show();
 
 echo "=== distrib 40  ===<br>";
-$nouveauJeu1 = $jeu1->distribuer( 40 );
+$nouveauJeu1 = $jeu1->distribuer( 24 );
 
 echo "============ Le nouveau jeu  ===================<br>";
 

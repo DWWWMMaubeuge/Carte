@@ -76,26 +76,6 @@ class Jeu
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public function trier()
 	{
 		asort( $this->cartes );

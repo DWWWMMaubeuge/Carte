@@ -23,7 +23,7 @@ $jeu1->show();
 
 $nouveauJeu1 = $jeu1->distribuer( 10 );
 $nouveauJeu2 = $jeu1->distribuer( 10 );
-$nouveauJeu3 = $jeu1->distribuer( 20 );
+$nouveauJeu3 = $jeu1->distribuer (5 );
 
 
 echo "============ 3 jeux de  10 ===================<br>";
@@ -35,8 +35,8 @@ $nouveauJeu3->showNL(3);
 echo "========= Rest de carte dans le jeux =========<br>";
 $jeu1->show();
 
-$joueurEnfant1 = $nouveauJeu4->distribuer(5);
-$joueurEnfant2 = $nouveauJeu4->distribuer(5);
+$joueurEnfant1 = $nouveauJeu1->distribuer(5);
+$joueurEnfant2 = $nouveauJeu1->distribuer(5);
 
 
 echo "========= les deux enfants qui se sont partagé le jeux 4 =========<br>";
