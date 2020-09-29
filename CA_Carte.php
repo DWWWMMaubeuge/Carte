@@ -1,9 +1,8 @@
 <?php
 
-//$__TEST = true;
+$__TEST = false;
 
 include_once( "CA_fonctions_generales.php");
-
 
 class Carte
 {
@@ -27,13 +26,10 @@ class Carte
 	}
 }
 
-
-
 if ( $__TEST )
 {
 
 echo "section des tests de CA_Carte.php <br>";
-
 
 $c1 = new Carte( "pique", "roi" );
 echo $c1->show();
