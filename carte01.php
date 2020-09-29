@@ -21,7 +21,7 @@
 
 <?php
 
-<<<<<<< HEAD
+
 $card_val = array( 'As', 'Deux', 'Trois', 'Quatre', 'Cinq', 'Six', 'Sept', 'Huit', 'Neuf', 'Dix', 'Valet', 'Valet', 'Reine', 'Roi' );
 $card_col = array( 'Carreau' , 'Pique', 'Qoeur', 'Trefle' );
 
@@ -46,21 +46,14 @@ function Card2Img( $couleur, $valeur )
 
 
 
-
-
-
->>>>>>> master
-
 class Carte
 {
 	public $couleur;
 	public $lettre_fantome;
 	public $valeur;
 
-	public function __construct(  $col, $val )
 	public function __construct(  $col, $val, $lettre )
 	{
-<<<<<<< HEAD
         $card_col = array(
             'H' => 'Coeur',
             'S' => 'Pique',
@@ -82,13 +75,8 @@ class Carte
             'Q' => 'Reine',
             'K' => 'Roi'
         );
-		$this->couleur = $col;
-		$this->valeur = $val;
-        $this->col_text = $card_col[$col];
-        $this->val_text = $card_val[$val];
     }
  
-=======
 		//echo "__construct(  $col, $val, $lettre )<br>\n";
 		$this->couleur = $col;
 		$this->valeur = $val;
@@ -97,9 +85,6 @@ class Carte
 
 	public function show( )
 	{
-		echo "<p>".$this->couleur."</p>\n";
-		echo "<p>".$this->valeur."</p>\n";
-	} __
 		$img = Card2Img( $this->couleur, $this->valeur );
 		//echo "$img <br>";
 		return "<div class=\"carte_vignette\"><img src=\"$img\" width=\"75\" height=\"125\"><br>".$this->valeur."</div>\n"; 
@@ -107,9 +92,6 @@ class Carte
 }
 
 
-$c1 = new Carte( "Pique", "As");
-
-$c1.show();
 //$c1 = new Carte( "pique", "roi");
 //echo $c1->show();
 // As de Pique
@@ -193,7 +175,6 @@ class Jeu
 		// on retourne un jeu qui contient $nbrCarteADistribuer
 		return $newJeu;
 	}
->>>>>>> master
 }
 
 
@@ -209,7 +190,6 @@ $j1->melanger();
 echo "===============================<br>";
 $j1->show();
 
-<<<<<<< HEAD
 class Jeu
 {
 	public $cartes = array();
@@ -225,25 +205,18 @@ class Jeu
 				Carte( $couleur, $valeur );
 			}
 	}
-=======
 $nj1 = $j1->distribuer( 10 );
 $nj2 = $j1->distribuer( 10 );
 $nj3 = $j1->distribuer( 10 );
 $nj4 = $j1->distribuer( 10 );
->>>>>>> master
 
 
 echo "===============================<br>";
 
-<<<<<<< HEAD
-}
-
-=======
 $nj1->show();
 $nj2->show();
 $nj3->show();
 $nj4->show();
->>>>>>> master
 
 echo "===============================<br>";
 $j1->show();
