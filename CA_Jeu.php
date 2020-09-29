@@ -102,12 +102,18 @@ class Jeu
 	{
 		$newJeu = new Jeu();
 
-		while( $nbrCarteADistribuer-- )
+		if ( count( $this->cartes) >= $nbrCarteADistribuer )
 		{
-			$carte = $this->donnerUneCarte();
-			$newJeu->prendreUneCarte(   $carte   );	
+			while( $nbrCarteADistribuer-- )
+			{
+				$carte = $this->donnerUneCarte();
+				$newJeu->prendreUneCarte(   $carte   );	
+			}
+			// on retourne un jeu qui contient $nbrCarteADistribuer
 		}
-		// on retourne un jeu qui contient $nbrCarteADistribuer
+		else
+			throw new Exception("je n'ai pas assez de carte.");
+
 		return $newJeu;
 	}
 }
