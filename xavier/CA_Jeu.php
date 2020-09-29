@@ -20,29 +20,26 @@ class Jeu
 
 	public function initTarot(  )
 	{
-		GLOBAL $cards_couleur, $cards_valeur;
-		$this->break = 14;
-
-		foreach( $cards_couleur as $couleur ) 
-		{
-			$code = 65;
-			foreach ($cards_valeur as $valeur)
-			{ 
-				array_push( $this->cartes, new Carte( $couleur, $valeur, chr($code) ));
-				$code++; 
-			}
-		}
+		GLOBAL $cards_valeur;
+		$this->init( $cards_valeur, 14 );
 	}
 
 	public function init32(  )
 	{
-		GLOBAL $cards_couleur, $cards_valeur32;
-		$this->break = 8;
+		GLOBAL $cards_valeur32;
+		$this->init( $cards_valeur32, 8 );
+	}
+
+
+	private function init( $array_carte, $longuer_ligne )
+	{
+		GLOBAL $cards_couleur;
+		$this->break = $longuer_ligne;
 
 		foreach( $cards_couleur as $couleur ) 
 		{
 			$code = 65;
-			foreach ($cards_valeur32 as $valeur)
+			foreach ($array_carte as $valeur)
 			{ 
 				array_push( $this->cartes, new Carte( $couleur, $valeur, chr($code) ));
 				$code++; 
@@ -76,7 +73,7 @@ class Jeu
 		foreach ($this->cartes as $carte )
 		{ 
 			echo $carte->show();
-			if ( $cpt++ % $this->breakL == 0)
+			if ( $cpt++ % $breakL == 0)
 			{
 				echo "</div>\n";
 				echo "<div class=\"container_cartes\">\n";
